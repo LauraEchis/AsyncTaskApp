@@ -11,8 +11,10 @@ import android.support.v4.content.ContextCompat.getSystemService
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.Toast
-import okhttp3.OkHttpClient
-import okhttp3.Request
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import okhttp3.*
+import java.io.IOException
 
 class MainActivity : AppCompatActivity() {
 
@@ -52,8 +54,20 @@ class MainActivity : AppCompatActivity() {
                 val client = OkHttpClient()
                 val url = "https://swapi.co/api/"
                 val request = Request.Builder().url(url).build()
-                val response = client.newCall(request).execute()
-                return response.body()?.string().toString()
+                client.newCall(request).enqueue(object: Callback {
+                    override fun onFailure(call: Call, e: IOException) {
+                        Toast.makeText(context, "О нет, напали постанники и похитили данные!", Toast.LENGTH_LONG)
+                    }
+
+                    override fun onResponse(call: Call, response: Response) {
+                        val body = response?.body()?.string().toString()
+                        val gson = GsonBuilder().create()
+                        val homefeed = gson.fromJson(body, PeopleList::class.java)
+
+
+                    }
+                })
+                return ""
             } else {
                 return ""
             }
@@ -81,3 +95,13 @@ class MainActivity : AppCompatActivity() {
         return activeNetworkInfo != null && activeNetworkInfo.isConnected
     }
 }
+
+class PeopleList (val people: List<People>)
+
+class People(val name: String, val birth_year: String,
+             val eye_color: String, val gender: String,
+             val hair_color: String, val height: String,
+             val mass: String, val skin_color: String,
+             val homeworld: String, val films: String,
+             val species: String, val starships: String,
+             val vehicles: String)
