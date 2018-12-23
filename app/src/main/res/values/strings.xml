@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">AsyncTaskApp</string>
+
+    <string-array name="spinnerItems">
+        <item>People</item>
+        <item>Planets</item>
+        <item>Films</item>
+        <item>Species</item>
+        <item>Vehicles</item>
+        <item>Starships</item>
+    </string-array>
 </resources>
