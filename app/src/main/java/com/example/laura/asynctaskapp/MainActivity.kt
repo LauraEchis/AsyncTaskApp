@@ -57,20 +57,115 @@ class MainActivity : AppCompatActivity() {
                 doAsync {
                     val url: String =
                         "https://swapi.co/api/" + spinner.selectedItem.toString().trim().toLowerCase() + "?search=$query"
-                    var buffer = URL(url).readText()
-                    var json_buf = Klaxon().parse<People>(buffer)!!
 
-                    var peopleList = json_buf.results!!
+                    when (spinner.selectedItem.toString().trim().toLowerCase()) {
+                        "people" -> {
+                            var buffer = URL(url).readText()
+                            var json_buf = Klaxon().parse<People>(buffer)!!
 
-                    uiThread {
-                        var adapter = PeopleAdapter(context, peopleList)
-                        val listView: ListView = findViewById(R.id.listViewPeople)
-                        listView?.adapter = adapter
-                        adapter.notifyDataSetChanged()
+                            var peopleList = json_buf.results!!
 
-                        if (json_buf.count==0) toast("В текущем разделе данных не найдено")
+                            uiThread {
+                                var adapter = PeopleAdapter(context, peopleList)
+                                val listView: ListView = findViewById(R.id.listViewPeople)
+                                listView?.adapter = adapter
+                                adapter.notifyDataSetChanged()
+
+                                if (json_buf.count == 0) toast("В текущем разделе данных не найдено")
 
 
+                            }
+                        }
+
+                        "planets" -> {
+                            var buffer = URL(url).readText()
+                            var json_buf = Klaxon().parse<Planets>(buffer)!!
+
+                            var planetsList = json_buf.results!!
+
+                            uiThread {
+                                var adapter = PlanetsAdapter(context, planetsList)
+                                val listView: ListView = findViewById(R.id.listViewPeople)
+                                listView?.adapter = adapter
+                                adapter.notifyDataSetChanged()
+
+                                if (json_buf.count == 0) toast("В текущем разделе данных не найдено")
+
+
+                            }
+                        }
+
+                        "films" -> {
+                            var buffer = URL(url).readText()
+                            var json_buf = Klaxon().parse<Films>(buffer)!!
+
+                            var filmsList = json_buf.results!!
+
+                            uiThread {
+                                var adapter = FilmsAdapter(context, filmsList)
+                                val listView: ListView = findViewById(R.id.listViewPeople)
+                                listView?.adapter = adapter
+                                adapter.notifyDataSetChanged()
+
+                                if (json_buf.count == 0) toast("В текущем разделе данных не найдено")
+
+
+                            }
+                        }
+
+                        "species" -> {
+                            var buffer = URL(url).readText()
+                            var json_buf = Klaxon().parse<Species>(buffer)!!
+
+                            var speciesList = json_buf.results!!
+
+                            uiThread {
+                                var adapter = SpeciesAdapter(context, speciesList)
+                                val listView: ListView = findViewById(R.id.listViewPeople)
+                                listView?.adapter = adapter
+                                adapter.notifyDataSetChanged()
+
+                                if (json_buf.count == 0) toast("В текущем разделе данных не найдено")
+
+
+                            }
+                        }
+
+                        "vehicles" -> {
+                            var buffer = URL(url).readText()
+                            var json_buf = Klaxon().parse<Vehicles>(buffer)!!
+
+                            var vehicleList = json_buf.results!!
+
+                            uiThread {
+                                var adapter = VehiclesAdapter(context, vehicleList)
+                                val listView: ListView = findViewById(R.id.listViewPeople)
+                                listView?.adapter = adapter
+                                adapter.notifyDataSetChanged()
+
+                                if (json_buf.count == 0) toast("В текущем разделе данных не найдено")
+
+
+                            }
+                        }
+
+                        "starships" -> {
+                            var buffer = URL(url).readText()
+                            var json_buf = Klaxon().parse<Starships>(buffer)!!
+
+                            var starshipList = json_buf.results!!
+
+                            uiThread {
+                                var adapter = StarshipsAdapter(context, starshipList)
+                                val listView: ListView = findViewById(R.id.listViewPeople)
+                                listView?.adapter = adapter
+                                adapter.notifyDataSetChanged()
+
+                                if (json_buf.count == 0) toast("В текущем разделе данных не найдено")
+
+
+                            }
+                        }
                     }
 
                 }

@@ -28,14 +28,14 @@ class Species(
     @Json(ignored = false) val count: Int? = 0,
     @Json(ignored = false) val next: String? = "",
     @Json(ignored = false) val previous: String? = "",
-    @Json(ignored = false) val results: List<Person>? = null
+    @Json(ignored = false) val results: List<Kind>? = null
 )
 
 class Vehicles(
     @Json(ignored = false) val count: Int? = 0,
     @Json(ignored = false) val next: String? = "",
     @Json(ignored = false) val previous: String? = "",
-    @Json(ignored = false) val results: List<Kind>? = null
+    @Json(ignored = false) val results: List<Vehicle>? = null
 )
 
 class Starships(
