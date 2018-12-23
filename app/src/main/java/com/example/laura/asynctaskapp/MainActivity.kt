@@ -11,6 +11,7 @@ import org.jetbrains.anko.toast
 import org.jetbrains.anko.uiThread
 import java.net.URL
 
+
 class MainActivity : AppCompatActivity() {
 
 //    lateinit var context: Context
@@ -69,6 +70,7 @@ class MainActivity : AppCompatActivity() {
                         adapter.notifyDataSetChanged()
 
                         if (json_buf.count==0) toast("В текущем разделе данных не найдено")
+
 
 
                     }
@@ -144,3 +146,13 @@ class MainActivity : AppCompatActivity() {
 //        return activeNetworkInfo != null && activeNetworkInfo.isConnected
 //    }
 }
+
+class PeopleList (val people: List<People>)
+
+class People(val name: String, val birth_year: String,
+             val eye_color: String, val gender: String,
+             val hair_color: String, val height: String,
+             val mass: String, val skin_color: String,
+             val homeworld: String, val films: String,
+             val species: String, val starships: String,
+             val vehicles: String)
