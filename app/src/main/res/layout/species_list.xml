@@ -24,12 +24,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:id="@+id/designation" android:layout_margin="8dp"
                 android:textSize="18sp"/>
-        <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/average_height" android:layout_margin="8dp"
-                android:textSize="18sp"/>
+
     </LinearLayout>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/average_height" android:layout_margin="8dp"
+            android:textSize="18sp"/>
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -44,12 +45,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:id="@+id/hair_colors" android:layout_margin="8dp"
                 android:textSize="18sp"/>
-        <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/average_lifespan" android:layout_margin="8dp"
-                android:textSize="18sp"/>
+
     </LinearLayout>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/average_lifespan" android:layout_margin="8dp"
+            android:textSize="18sp"/>
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"

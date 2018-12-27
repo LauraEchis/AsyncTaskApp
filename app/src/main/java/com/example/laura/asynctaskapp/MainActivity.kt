@@ -95,23 +95,7 @@ class MainActivity : AppCompatActivity() {
                             }
                         }
 
-                        "films" -> {
-                            var buffer = URL(url).readText()
-                            var json_buf = Klaxon().parse<Films>(buffer)!!
 
-                            var filmsList = json_buf.results!!
-
-                            uiThread {
-                                var adapter = FilmsAdapter(context, filmsList)
-                                val listView: ListView = findViewById(R.id.listViewPeople)
-                                listView?.adapter = adapter
-                                adapter.notifyDataSetChanged()
-
-                                if (json_buf.count == 0) toast("В текущем разделе данных не найдено")
-
-
-                            }
-                        }
 
                         "species" -> {
                             var buffer = URL(url).readText()
@@ -148,15 +132,15 @@ class MainActivity : AppCompatActivity() {
 
                             }
                         }
-
                         "starships" -> {
+
                             var buffer = URL(url).readText()
                             var json_buf = Klaxon().parse<Starships>(buffer)!!
 
-                            var starshipList = json_buf.results!!
+                            var starshipsList = json_buf.results!!
 
                             uiThread {
-                                var adapter = StarshipsAdapter(context, starshipList)
+                                var adapter = StarshipsAdapter(context, starshipsList)
                                 val listView: ListView = findViewById(R.id.listViewPeople)
                                 listView?.adapter = adapter
                                 adapter.notifyDataSetChanged()
@@ -165,9 +149,12 @@ class MainActivity : AppCompatActivity() {
 
 
                             }
-                        }
-                    }
 
+                        }
+
+
+                    }
+                     false
                 }
 
                 return false

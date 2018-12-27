@@ -27,7 +27,7 @@ class VehiclesAdapter(val context: Context, val vehicles: List<Vehicle>) : BaseA
         cost_in_creditsText.text = "Cost in credits: " + vehicles[position].cost_in_credits
 
         val lengthText = rowView!!.findViewById<TextView>(R.id.length)
-        lengthText.text = "Length: " + vehicles[position].lenght
+        lengthText.text = "Length: " + vehicles[position].length
 
         val max_atmosphering_speedText = rowView!!.findViewById<TextView>(R.id.max_atmosphering_speed)
         max_atmosphering_speedText.text = "Max atmosphering speed: " + vehicles[position].max_atmosphering_speed

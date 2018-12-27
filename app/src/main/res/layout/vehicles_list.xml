@@ -24,12 +24,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:id="@+id/manufacturer" android:layout_margin="8dp"
                 android:textSize="18sp"/>
-        <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/cost_in_credits" android:layout_margin="8dp"
-                android:textSize="18sp"/>
     </LinearLayout>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/cost_in_credits" android:layout_margin="8dp"
+            android:textSize="18sp"/>
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"

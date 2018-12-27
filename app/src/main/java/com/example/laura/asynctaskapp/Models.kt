@@ -17,13 +17,6 @@ class Planets(
     @Json(ignored = false) val results: List<Planet>? = null
 )
 
-class Films(
-    @Json(ignored = false) val count: Int? = 0,
-    @Json(ignored = false) val next: String? = "",
-    @Json(ignored = false) val previous: String? = "",
-    @Json(ignored = false) val results: List<Film>? = null
-)
-
 class Species(
     @Json(ignored = false) val count: Int? = 0,
     @Json(ignored = false) val next: String? = "",
@@ -44,6 +37,8 @@ class Starships(
     @Json(ignored = false) val previous: String? = "",
     @Json(ignored = false) val results: List<Starship>? = null
 )
+
+
 
 
 public class Person(
@@ -69,15 +64,6 @@ public class Planet(
     @Json(ignored = false) val population: String? = ""
 )
 
-public class Film(
-    @Json(ignored = false) val title: String? = "",
-    @Json(ignored = false) val episode_id: String? = "",
-    @Json(ignored = false) val opening_crawl: String? = "",
-    @Json(ignored = false) val director: String? = "",
-    @Json(ignored = false) val producer: String? = "",
-    @Json(ignored = false) val release_date: String? = ""
-)
-
 public class Kind(
     @Json(ignored = false) val name: String? = "",
     @Json(ignored = false) val classification: String? = "",
@@ -95,7 +81,7 @@ public class Vehicle(
     @Json(ignored = false) val model: String? = "",
     @Json(ignored = false) val manufacturer: String? = "",
     @Json(ignored = false) val cost_in_credits: String? = "",
-    @Json(ignored = false) val lenght: String? = "",
+    @Json(ignored = false) val length: String? = "",
     @Json(ignored = false) val max_atmosphering_speed: String? = "",
     @Json(ignored = false) val crew: String? = "",
     @Json(ignored = false) val passengers: String? = "",
@@ -109,13 +95,15 @@ public class Starship(
     @Json(ignored = false) val model: String? = "",
     @Json(ignored = false) val manufacturer: String? = "",
     @Json(ignored = false) val cost_in_credits: String? = "",
-    @Json(ignored = false) val lenght: String? = "",
+    @Json(ignored = false) val length: String? = "",
     @Json(ignored = false) val max_atmosphering_speed: String? = "",
     @Json(ignored = false) val crew: String? = "",
     @Json(ignored = false) val passengers: String? = "",
     @Json(ignored = false) val cargo_capacity: String? = "",
     @Json(ignored = false) val consumables: String? = "",
     @Json(ignored = false) val hyperdrive_rating: String? = "",
-    @Json(ignored = false) val MGLT: String? = "",
+    @Json(ignored = false) val mglt: String? = "",
     @Json(ignored = false) val starship_class: String? = ""
+
 )
+
