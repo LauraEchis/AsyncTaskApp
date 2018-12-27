@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AsyncTaskApp</string>
+    <string name="app_name">Star Wars Search</string>
 
     <string-array name="spinnerItems">
         <item>People</item>

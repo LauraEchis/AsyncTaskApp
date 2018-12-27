@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 doAsync {
                     val url: String =
-                        "https://swapi.co/api/" + spinner.selectedItem.toString().trim().toLowerCase() + "?search=$query"
+                        "https://swapi.co/api/" + spinner.selectedItem.toString().trim().toLowerCase() + "/?search=$query"
 
                     when (spinner.selectedItem.toString().trim().toLowerCase()) {
                         "people" -> {
@@ -132,6 +132,7 @@ class MainActivity : AppCompatActivity() {
 
                             }
                         }
+
                         "starships" -> {
 
                             var buffer = URL(url).readText()
@@ -150,6 +151,25 @@ class MainActivity : AppCompatActivity() {
 
                             }
 
+                        }
+
+                        "films" -> {
+                            var buffer = URL(url).readText()
+                            var json_buf = Klaxon().parse<Films>(buffer)!!
+
+                            var filmsList = json_buf.results!!
+
+                            uiThread {
+                                var adapter = FilmsAdapter(context, filmsList)
+                                val listView: ListView = findViewById(R.id.listViewPeople)
+                                listView?.adapter = adapter
+                                adapter.notifyDataSetChanged()
+
+                                if (json_buf.count == 0) toast("В текущем разделе данных не найдено")
+                                else toast (json_buf.count.toString())
+
+
+                            }
                         }
 
 

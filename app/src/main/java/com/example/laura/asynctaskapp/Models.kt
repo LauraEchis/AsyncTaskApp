@@ -38,8 +38,12 @@ class Starships(
     @Json(ignored = false) val results: List<Starship>? = null
 )
 
-
-
+class Films(
+    @Json(ignored = false) val count: Int? = 0,
+    @Json(ignored = false) val next: String? = "",
+    @Json(ignored = false) val previous: String? = "",
+    @Json(ignored = false) val results: List<Film>? = null
+)
 
 public class Person(
     @Json(ignored = false) val name: String? = "",
@@ -107,3 +111,11 @@ public class Starship(
 
 )
 
+public class Film (
+    @Json(ignored = false) val title: String? = "",
+    @Json(ignored = false) val episode_id: Int? = 0,
+////    @Json(ignored = false) val opening_crawl: String? = "",
+    @Json(ignored = false) val director: String? = "",
+    @Json(ignored = false) val producer: String? = "",
+    @Json(ignored = false) val release_date: String? = ""
+)
